@@ -216,22 +216,21 @@ const custom = {
 
     date = new Date()
     var y = String(date.getFullYear());
-    var m = String(date.getMonth());
+    var m = String(date.getMonth()+1);
     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     var month = months[m-1];
-    var day = String(date.getDate()-3);
+    var day = String(date.getDate());
     const formatDate = y + "-" + m + "-" + day
     const BM = files.bookmarkedPath("Health Export");
     const filePath = "/" + y + "/" + month + "/" + formatDate
     var healthPath = files.joinPath(BM, filePath)
-
     //Get heart data
     const heartPath = files.joinPath(healthPath, String("Heart Rate-" + formatDate + ".csv"))
     if (files.fileExists(heartPath)) {
       var heartData = files.readString(heartPath)
       var heart = heartData.split(/[\n,]/)
       var last = heart.length - 2
-      var heartAvg = Math.round(heart[last])  
+      var heartAvg = Math.round(heart[last])
     } else {
       var heartAvg = "--" 
     }
