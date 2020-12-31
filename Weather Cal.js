@@ -248,7 +248,6 @@ const custom = {
 
   //Set defualt, 'light' background 
   var path = files.joinPath(dirPath, "Weather Cal-light.jpg")
-
   //Check if device is using dark mode, use dark image if true
   if (Device.isUsingDarkAppearance()){
     var path = files.joinPath(dirPath, "Weather Cal-dark.jpg")
