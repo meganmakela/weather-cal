@@ -19,7 +19,7 @@ const layout = `
   row 
     column
       date
-    column(170)
+    column(175)
       right
       batterybright
       health
@@ -28,7 +28,6 @@ const layout = `
     column
       left
       events
-      reminders
       right
       greeting
       
@@ -239,7 +238,7 @@ const custom = {
 
  },
 
- async background(widget) {
+ /*async background(widget) {
   
   //if (!code.data.sun) { await code.setupSunrise() }
   ///const current = code.now.getTime()
@@ -258,7 +257,7 @@ const custom = {
 
   return widget.backgroundImage = files.readImage(path)
   
-  },
+  },*/
 
 }
 
