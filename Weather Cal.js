@@ -140,7 +140,7 @@ const custom = {
     const BM = files.bookmarkedPath("Health Export");
     const filePath = "/" + y + "/" + month + "/" + formatDate
     var healthPath = files.joinPath(BM, filePath)
-    QuickLook.present(healthPath)
+//     QuickLook.present(healthPath)
 
     //Get activity data 
     const activityPath = files.joinPath(healthPath, String("Active Energy-" + formatDate + ".csv"))
