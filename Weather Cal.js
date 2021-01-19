@@ -126,15 +126,21 @@ const custom = {
     //Get date and file path information
     date = new Date()
     var y = String(date.getFullYear());
-    var m = String(date.getMonth()+1);
+    var m = date.getMonth()+1;
+    if (m < 10) {
+      m = "0" + m
+    }
     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     var month = months[m-1];
-    var day = String(date.getDate());
+    var day = date.getDate();
+    if (day < 10) {
+      day = "0" + day
+    }
     const formatDate = y + "-" + m + "-" + day
     const BM = files.bookmarkedPath("Health Export");
     const filePath = "/" + y + "/" + month + "/" + formatDate
     var healthPath = files.joinPath(BM, filePath)
-//     QuickLook.present(healthPath)
+    QuickLook.present(healthPath)
 
     //Get activity data 
     const activityPath = files.joinPath(healthPath, String("Active Energy-" + formatDate + ".csv"))
@@ -216,14 +222,21 @@ const custom = {
 
     date = new Date()
     var y = String(date.getFullYear());
-    var m = String(date.getMonth()+1);
+    var m = date.getMonth()+1;
+    if (m < 10) {
+      m = "0" + m
+    }
     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     var month = months[m-1];
-    var day = String(date.getDate());
+    var day = date.getDate();
+    if (day < 10) {
+      day = "0" + day
+    }
     const formatDate = y + "-" + m + "-" + day
     const BM = files.bookmarkedPath("Health Export");
     const filePath = "/" + y + "/" + month + "/" + formatDate
     var healthPath = files.joinPath(BM, filePath)
+    
     //Get heart data
     const heartPath = files.joinPath(healthPath, String("Heart Rate-" + formatDate + ".csv"))
     if (files.fileExists(heartPath)) {
